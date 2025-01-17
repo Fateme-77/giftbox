@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -594,6 +595,8 @@ colorChoice.addEventListener('change', (e) => {
     packagePreview.src = `images/package-${selectedColor}.jpg`; // اصلاح شده
 });
 
+
+
 // تغییر طرح بسته
 const designStyle = document.getElementById('design-style');
 designStyle.addEventListener('change', (e) => {
@@ -610,6 +613,7 @@ designStyle.addEventListener('change', (e) => {
                 const reader = new FileReader();
                 reader.onload = (event) => {
                     const packagePreview = document.getElementById('package-preview');
+
                     packagePreview.src = event.target.result;
                 };
                 reader.readAsDataURL(file);
@@ -647,13 +651,6 @@ designStyle.addEventListener('change', (e) => {
             <div class="summary">
               
                 <div id="cart-section">
-    <h3>Your Cart</h3>
-
-    <p>No items yet. Add products to your cart!</p>
-
-</div>
-
-
 
                 <p>Personalization:</p>
                 <ul>
@@ -669,6 +666,72 @@ designStyle.addEventListener('change', (e) => {
                 <img src="images/image1.jpg" alt="New Image">
                 <p>Your carefully curated giftbox with all the personalized touches.</p>
             </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+        /* Main Style */
+        #package-preview {
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 400px;
+            padding: 20px;
+        }
+
+        .template-actions {
+            margin-top: 20px;
+        }
+
+        .template-actions button {
+            background-color: #d5852b; /* Dark orange */
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .template-actions button:hover {
+            background-color: #e65a00; /* Slightly darker orange */
+        }
+
+        .template-actions button:active {
+            background-color: #cc4e00; /* Even darker orange */
+        }
+    </style>
+</head>
+<body>
+ 
+        <!-- Buttons -->
+        <div class="template-actions">
+            <button onclick="saveTemplate()">Save Template</button>
+            <button onclick="shareTemplate()">Share Template</button>
+        </div>
+    </div>
+
+    <script>
+        function saveTemplate() {
+            alert("Template saved successfully!");
+        }
+
+        function shareTemplate() {
+            alert("Template link is ready for sharing!");
+        }
+    </script>
+</body>
+</html>
+
+
+
 
             <div class="discount-section">
     <label>Do you have a discount code?</label>
@@ -682,6 +745,8 @@ designStyle.addEventListener('change', (e) => {
     <button>Add to Cart</button>
     <button>Order Now</button>
 </div>
+
+
 
 <style>
     .apply-discount {
@@ -717,7 +782,9 @@ designStyle.addEventListener('change', (e) => {
         </div>
     </div>
 </div>
+
 <script>
+
     let cart = [];
 
     function addToCart(productName) {
